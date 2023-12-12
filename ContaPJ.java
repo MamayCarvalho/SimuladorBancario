@@ -1,9 +1,9 @@
 package Banco;
 
-public abstract class ContaPJ extends Conta {
+public class ContaPJ extends Conta {
 	
-	protected double emprestimo;
-	protected final double limiteEmprestimo = 2500.00;
+	private double emprestimo;
+	private final double limiteEmprestimo = 2500.00;
 	
 	public ContaPJ(String titular, double limiteEmprestimo) {
 		super(titular, "PJ");
