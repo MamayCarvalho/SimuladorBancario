@@ -2,7 +2,7 @@ package Banco;
 
 public class ContaPoupanca extends Conta {
 	
-	protected final double taxaRendimento = 1.5;
+	private final double taxaRendimento = 1.5;
 	
 	  public ContaPoupanca(String titular, double taxaRendimento) {
 	        super(titular, "Poupança");
