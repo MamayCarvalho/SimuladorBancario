@@ -5,12 +5,14 @@ public class Conta {
 	private double saldo; 
 	private int numero; 
 	private String titular;
+	private String tipoConta;
 	
 	
 	public Conta(String titular, String tipoConta) {
 		this.saldo = 0;
 		this.numero = 0;
 		this.titular = titular;
+		this.tipoConta = tipoConta;
 	}
 
 	public double getSaldo() {
