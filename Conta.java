@@ -1,6 +1,6 @@
 package Banco;
 
-abstract class Conta {
+public class Conta {
 	
 	private double saldo; 
 	private int numero; 
