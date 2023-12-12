@@ -1,42 +1,55 @@
 package Banco;
 
-public class Conta {
+abstract class Conta {
 	
-	protected double saldo; 
-	protected int numero; 
-	protected String titular;
+	private double saldo; 
+	private int numero; 
+	private String titular;
 	
-	private double getSaldo() {
-		return saldo;
-	}
-	private void setSaldo(double saldo) {
-		this.saldo = saldo;
-	}
-	private int getNumero() {
-		return numero;
-	}
-	private void setNumero(int numero) {
-		this.numero = numero;
-	}
-	private String getTitular() {
-		return titular;
-	}
-	private void setTitular(String titular) {
+	
+	public Conta(String titular, String tipoConta) {
+		this.saldo = 0;
+		this.numero = 0;
 		this.titular = titular;
 	}
-	
-	public void sacar(double dinheiro) {
-		if(getSaldo() > 0) {
-			double saque = getSaldo() - dinheiro;
-			setSaldo(saque);
+
+	public double getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public String getTitular() {
+		return titular;
+	}
+
+	public void setTitular(String titular) {
+		this.titular = titular;
+	}
+
+	public void saque(double dinheiro) {
+		double retirarSaldo = getSaldo() - dinheiro;
+		if(retirarSaldo > 0) {
+			setSaldo(retirarSaldo);
 		} else {
 			System.out.println("Saldo insuficiente para realizar a operação solicitada!");
 		}
 	}
 	
+		
 	public void depositar(double dinheiro) {
-		double deposito = getSaldo() + dinheiro;
-		setSaldo(deposito);
+		double addDeposito = getSaldo() + dinheiro;
+		setSaldo(addDeposito);
 	}
 
 }
