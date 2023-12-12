@@ -10,7 +10,7 @@ public class Menu extends Conta {
 
 	public void menu(Scanner sc) {
 		System.out.println("Selecione o número correspondente a ação desejada: \n1 - Cadastrar Conta\n2 - "
-				+ "Sacar\n3 - Depositar\n4 - Solicitar emprestimo\n5 - Excluir Conta");
+				+ "Sacar\n3 - Depositar\n4 - Solicitar emprestimo\n5 - Excluir Conta\n6 - Sair");
 		int opcao = sc.nextInt();
 		
 		switch(opcao) {
@@ -32,10 +32,10 @@ public class Menu extends Conta {
 			depositar(dinheiro);
 	
 		case 3:
-			sacar(dinheiro);
+			saque(dinheiro);
 			
 		case 4:
-			emprestimo();
+			emprestimo(dinheiro);
 			
 		case 5:
 			//excluirConta();
