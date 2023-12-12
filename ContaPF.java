@@ -2,9 +2,9 @@ package Banco;
 
 public class ContaPF extends Conta{
 	
-	protected final double limiteEmprestimo = 1100.50;
-	protected final double taxaSaque = 1.75;
-	protected double emprestimo;
+	private final double limiteEmprestimo = 1100.50;
+	private final double taxaSaque = 1.75;
+	private double emprestimo;
 	
 	  public ContaPF(String titular, double limiteEmprestimo, double taxaSaque) {
 	        super(titular, "PF");
