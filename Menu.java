@@ -30,6 +30,7 @@ public class Menu extends Conta {
 			System.out.println("Informe o valor do empréstimo que deseja obter: ");
 			double emprestimo = sc.nextDouble();
 			emprestimo(emprestimo);
+			break;
 			
 		case 5:
 			//excluirConta();
@@ -57,7 +58,7 @@ public class Menu extends Conta {
 
 			System.out.println("Conta para Pessoa Juridica: ");
 		} else {
-			ContaPoupanca conta1 = new ContaPoupanca(tipoConta);
+			ContaPoupanca conta3 = new ContaPoupanca(tipoConta);
 			
 			System.out.println("Conta Poupança: ");
 		}
