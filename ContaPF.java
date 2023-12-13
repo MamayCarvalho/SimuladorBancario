@@ -6,7 +6,7 @@ public class ContaPF extends Conta{
 	private final double taxaSaque = 1.75;
 	private double emprestimo;
 	
-	  public ContaPF(String titular, double limiteEmprestimo, double taxaSaque) {
+	  public ContaPF(String titular) {
 	        super(titular, "PF");
 	    }
 	
@@ -25,24 +25,13 @@ public class ContaPF extends Conta{
 		this.emprestimo = emprestimo;
 	}
 	
-	public void sacar(double dinheiro) {
-		double retirarSaldo = getSaldo() - (getTaxaSaque()) - dinheiro;
-		if(retirarSaldo > 0) {
-			setSaldo(retirarSaldo);
-		} else {
-			System.out.println("Saldo insuficiente para realizar a operação solicitada!");
-		}
-	}
-	
-	public void deposito(double dinheiro) {
-		depositar(dinheiro);
-	} 
-	
 	public void emprestimo(double dinheiro) {
 		if(dinheiro > getLimiteEmprestimo()) {
-			System.out.println("Seu limite de Emprestimo é de R$" + getLimiteEmprestimo());
+			System.out.println("Seu limite de Emprestimo é de R$" + getLimiteEmprestimo() + "! Solicite um valor igual ou abaixo do mesmo.");
 		}else {
-			dinheiro =- getLimiteEmprestimo() - getTaxaSaque();
+			dinheiro = getSaldo() - getTaxaSaque();
+			setEmprestimo(dinheiro);
+			System.out.println("O valor de R$" + getEmprestimo() + " foi depositado em sua conta. Seu saldo atual é de " + getSaldo());
 		}
 	}
 
